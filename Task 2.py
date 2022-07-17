@@ -23,18 +23,33 @@
 
 def transformStr(str):
     if(len(str) > 5):
-        print(str[0:5] + "...")
-    if(str[0] == 'U' or str[0] == 'u'):
-        print(str.upper())
-    if(str[0] == 'L' or str[0] == 'l'):
+        if(len(str) > 5 and str[0] == 'L' or str[0] == 'l'):
+            print(str[0:5].lower() +"...")
+        elif(len(str) > 5 and str[0] == 'u' or str[0] == 'U'):
+            print(str[0:5].upper() +"...")    
+        else:    
+            print(str[0:5] + "...")    
+    elif(str[0] == 'L' or str[0] == 'l'):
         print(str.lower())
-    if(str[0] == 'L' and len(str) > 5):
-        print(str[0:5].lower() + "...")
+    elif(str[0] == 'U' or str[0] == 'u'):
+        print(str.upper())           
     else: 
-        print(str)
+        print(str) 
+
+    
+
+
+    
           
 
 transformStr('Testing string') # 'Testi...' (довжина більше 5 символів)
 transformStr('Lux') # 'lux' (Починается на L)
 transformStr('up') # 'UP' (Починается на U)
 transformStr('Luxery') # 'luxer...' (Починается на L + довжина більше 5 символів)
+transformStr('underground')
+transformStr('Mixer')
+transformStr('lEXuS')
+transformStr('UniCOde')
+transformStr('Python')
+transformStr('coding')
+transformStr('Home')
